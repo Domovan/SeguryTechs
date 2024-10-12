@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+<head>
+    <meta charset="UTF-8">
+    <title>Buscar Colonias en el Mapa</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <style>
+        #map { height: 500px; }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.0/socket.io.js"></script>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="static/js/main.js"></script>
+</head>
+<body>
+    <h1>Buscador de Colonias en Aguascalientes</h1>
+    <input type="text" id="search_input" placeholder="Escribe el nombre de la colonia">
+    <div id="search_results"></div>
+    <div id="map"></div>
+</body>
+</html>
+{% endblock %}

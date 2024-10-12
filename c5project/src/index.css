@@ -1,0 +1,343 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Estilo del mapa */
+.map-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 20px;
+  z-index: 1000;
+  pointer-events: none; 
+}
+/* Fin estilo del mapa */
+
+/* Estilos para el login */
+.login-container {
+  pointer-events: auto;
+}
+
+.login-button {
+  background-color: rgb(68, 68, 68);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+  background-color:  rgb(68, 68, 68)
+}
+
+.welcome-message {
+  font-size: 16px;
+  color: #333;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 10px 20px;
+  border-radius: 20px;
+}
+/* Fin estilo del login */
+
+/* Estilos para la barra de búsqueda */
+.search-container {
+  pointer-events: auto;
+  display: flex;
+  justify-content:flex-end; 
+}
+
+.search-container form {
+  display: flex;
+  background-color:  rgb(68, 68, 68);
+  border-radius: 24px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 100px rgba(0, 0, 0, 0.1);
+  margin-left: auto;
+}
+
+.search-container form:focus-within {
+  background-color: rgb(68, 68, 68);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.search-container input[type="text"] {
+  padding: 12px 20px;
+  font-size: 16px;
+  border: none;
+  background-color: transparent;
+  outline: none;
+  width: 200px;
+  transition: width 0.3s ease;
+}
+
+.search-container input[type="text"]:focus {
+  width: 300px;
+}
+
+.search-container button {
+  background-color: transparent;
+  border: none;
+  padding: 12px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.search-container button:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.search-container button::before {
+  content: "🔍";
+  font-size: 18px;
+}
+/* Fin estilos barra de busqueda */
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+  header {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+
+  .login-container {
+      margin-bottom: 10px;
+  }
+
+  .search-container input[type="text"] {
+      width: 150px;
+  }
+
+  .search-container input[type="text"]:focus {
+      width: 200px;
+  }
+}
+/* Fin estilos responsivos */
+
+/* Estilo popup */
+.app-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+.login-button {
+  position: absolute;
+  top: 20px;
+  right: 90%;
+  z-index: 1000;
+  padding: 10px 20px;
+  background-color: rgb(68, 68, 68);;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.login-sidebar {
+  position: fixed;
+  top: 0;
+  left: 500px;
+  width: 300px;
+  height: 100%;
+  background-color: rgb(0, 146, 179);
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  transition: left 0.3s ease-in-out;
+  z-index: 2000;
+}
+
+.login-sidebar.open {
+  left: 0;
+}
+
+.login-content {
+  padding: 20px;
+}
+
+.login-content h2 {
+  margin-bottom: 20px;
+}
+
+.login-content form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.login-content input {
+  padding: 8px;
+  border: 1px solid rgb(0, 146, 179);
+  border-radius: 4px;
+}
+
+.login-content button {
+  padding: 10px;
+  background-color: rgb(68, 68, 68);;
+  color: rgb(0, 146, 179);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.close-button {
+  margin-top: 10px;
+  background-color: #6c757d;
+}
+
+.leaflet-container {
+  width: 100%;
+  height: 100vh;
+}
+
+.app-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+.login-button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 1000;
+  padding: 10px 20px;
+  background-color: rgb(68, 68, 68);;
+  color: rgb(0, 146, 179);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.login-sidebar {
+  position: fixed;
+  top: 0;
+  left: -300px;
+  width: 300px;
+  height: 100%;
+  background-color: rgb(0, 146, 179);
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  transition: left 0.3s ease-in-out;
+  z-index: 2000;
+}
+
+.login-sidebar.open {
+  left: 0;
+}
+
+.login-content {
+  padding: 20px;
+}
+
+.login-content h2 {
+  margin-bottom: 20px;
+}
+
+.login-content form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.login-content input {
+  padding: 8px;
+  border: 1px solid rgb(0, 146, 179);
+  border-radius: 4px;
+}
+
+.login-content button {
+  padding: 10px;
+  background-color: rgb(68, 68, 68);;
+  color: rgb(0, 146, 179);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.close-button {
+  margin-top: 10px;
+  background-color: #6c757d;
+}
+
+.logout-button {
+  background-color: #dc3545;
+}
+
+.error-message {
+  color: #dc3545;
+  margin-top: 10px;
+}
+
+.leaflet-container {
+  width: 100%;
+  height: 100vh;
+}
+/* Final estilos popup */
+
+/* Estilos del menu */
+.right-container {
+  display: flex;
+  align-items: center;
+}
+
+.menu-button {
+  margin-left: 10px;
+  background-color: rgb(68, 68, 68);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.menu-bar {
+  position: fixed;
+  top: 0;
+  right: -300px;
+  width: 300px;
+  height: 100%;
+  background-color: white;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+  transition: right 0.3s ease-in-out;
+  z-index: 2000;
+}
+
+.menu-bar.open {
+  right: 0;
+}
+
+.menu-bar .close-button,
+.menu-bar .new-tab-button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.menu-bar .close-button {
+  background-color: #6c757d;
+}
+/* Fin de estilos del menu */
