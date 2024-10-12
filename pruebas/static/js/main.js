@@ -29,13 +29,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 li.addEventListener('click', function() {
                     var lat = colonia.lat;
                     var lng = colonia.lng;
+                    var riesgo = colonia.riesgo;  // Obtener el dato de riesgo
                     
                     // Centrar el mapa en la colonia buscada
                     map.setView([lat, lng], 16);
                     
                     // Añadir un marcador en la colonia
                     L.marker([lat, lng]).addTo(map)
-                        .bindPopup(colonia.nombre)
+                        .bindPopup(`${colonia.nombre} - Riesgo: ${riesgo}`)
                         .openPopup();
                 });
             });
