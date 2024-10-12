@@ -1,0 +1,26 @@
+/* Ajustar el tamaño del logo */
+.navbar-brand img {
+    width: 20%; /* Ajusta el tamaño según sea necesario */
+    height: auto;
+    border-radius: 10%;
+}
+
+/* Añadir margen superior para evitar que el contenido quede oculto tras la barra */
+body {
+    padding-top: 80px; /* Ajusta este valor según la altura de tu navbar */
+}
+
+/* Cambiar el color de fondo de la barra de navegación */
+.custom-navbar {
+    background-color: #333; /* Cambia este color al que prefieras */
+}
+
+/* Cambiar el color de los enlaces de navegación */
+.custom-navbar .nav-link {
+    color: white; /* Cambia este color si es necesario */
+}
+
+/* Cambiar el color del enlace al pasar el mouse por encima */
+.custom-navbar .nav-link:hover {
+    color: #f0ad4e; /* Un color diferente al hacer hover */
+}
