@@ -15,5 +15,11 @@ def index():#valiendo verga
 
 
 
+# Ruta principal para servir la página
+@app.route('/estadisticas')
+def estadisticas():#valiendo verga
+    return render_template('estadisticas.html')
+
+
 if __name__ == '__main__':
     socketio.run(app, debug=True, allow_unsafe_werkzeug=True)

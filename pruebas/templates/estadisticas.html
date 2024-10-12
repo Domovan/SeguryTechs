@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block title %}Statistics Gallery{% endblock %}
+
+{% block content %}
+<div class="container text-center">
+    <h1 class="mt-5">Awesome Stats Gallery</h1>
+    <p class="lead">Check out these amazing statistics visuals!</p>
+
+    <!-- Galería de imágenes de estadísticas -->
+    <div class="row">
+        <div class="col-md-4">
+            <img src="{{ url_for('static', filename='images/stat1.jpg') }}" class="img-fluid mb-4" alt="Stat 1">
+        </div>
+        <div class="col-md-4">
+            <img src="{{ url_for('static', filename='images/stat2.jpg') }}" class="img-fluid mb-4" alt="Stat 2">
+        </div>
+        <div class="col-md-4">
+            <img src="{{ url_for('static', filename='images/stat3.jpg') }}" class="img-fluid mb-4" alt="Stat 3">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <img src="{{ url_for('static', filename='images/stat4.jpg') }}" class="img-fluid mb-4" alt="Stat 4">
+        </div>
+        <div class="col-md-4">
+            <img src="{{ url_for('static', filename='images/stat5.jpg') }}" class="img-fluid mb-4" alt="Stat 5">
+        </div>
+        <div class="col-md-4">
+            <img src="{{ url_for('static', filename='images/stat6.jpg') }}" class="img-fluid mb-4" alt="Stat 6">
+        </div>
+    </div>
+</div>
+{% endblock %}
