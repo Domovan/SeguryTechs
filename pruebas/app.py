@@ -5,6 +5,7 @@ import json
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'mysecret'
 
+i=0
 socketio = SocketIO(app)
 # Datos de las colonias con coordenadas
 puntos_zonas = {
@@ -78,21 +79,63 @@ datos_riesgo = {
 @app.route('/')
 def index():#valiendo verga
     return render_template('index.html')
+
+
+
+@socketio.on('mostrar_zonas_riesgo')
+def handle_mostrar_zonas_riesgo():
+    zonas_con_riesgo = [{'nombre': k, 'lat': v[0], 'lng': v[1], 'riesgo': datos_riesgo[k]} 
+                        for k, v in puntos_zonas.items()]
+    socketio.emit('zonas_riesgo', zonas_con_riesgo)
+
 @socketio.on('search')
 def handle_search(query):
     results = []
-
-    # Busca la colonia en el diccionario
+    
+    # Busca la colonia exacta en el diccionario
     if query in puntos_zonas:
         lat, lng = puntos_zonas[query]
         riesgo = datos_riesgo[query]
         results.append({'nombre': query, 'lat': lat, 'lng': lng, 'riesgo': riesgo})
     else:
-        # Busca por coincidencia parcial
+        # Búsqueda por coincidencia parcial
         results = [{'nombre': k, 'lat': v[0], 'lng': v[1], 'riesgo': datos_riesgo[k]} 
                    for k, v in puntos_zonas.items() if query.lower() in k.lower()]
 
     socketio.emit('search_results', results)
+    
+    
+@socketio.on('ruta_cambiada')
+def handle_ruta_cambiada(data):
+    distancia = data.get('distancia')
+    duracion = data.get('duracion')
+    waypoints = data.get('waypoints')
+    calles = data.get('calles')  # Recibimos las calles
+
+    print("Ruta recibida:")
+    print(f"Distancia total: {distancia} metros")
+    print(f"Duración total: {duracion} segundos")
+    print("Waypoints (coordenadas):")
+    # for point in waypoints:
+    #     try:
+    #         lat = point['lat'] if isinstance(point, dict) else point[0]
+    #         lng = point['lng'] if isinstance(point, dict) else point[1]
+    #         print(f"Lat: {lat}, Lng: {lng}")
+    #     except (KeyError, IndexError) as e:
+    #         print(f"Error al acceder a las coordenadas: {e}")
+
+    print("Calles por las que pasa la ruta:")
+    for calle in calles:
+        print(calle)
+    print("\n" )
+    
+    
+@socketio.on('waypoint_dragged')
+def handle_waypoint_dragged(data):
+    waypoints = data['waypoints']
+    print("Puntos de control actualizados:", waypoints)
+
+
 
 # Ruta principal para servir la página
 @app.route('/estadisticas')

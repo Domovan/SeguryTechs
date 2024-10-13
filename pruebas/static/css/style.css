@@ -2,7 +2,7 @@
 .navbar-brand img {
     width: 20%; /* Ajusta el tamaño según sea necesario */
     height: auto;
-    border-radius: 10%;
+    border-radius: 10px;
 }
 
 /* Añadir margen superior para evitar que el contenido quede oculto tras la barra */
@@ -10,10 +10,7 @@ body {
     padding-top: 100px; /* Ajusta este valor según la altura de tu navbar */
 }
 
-/* Cambiar el color de fondo de la barra de navegación */
-.custom-navbar {
-    background-color: #333; /* Cambia este color al que prefieras */
-}
+
 
 /* Cambiar el color de los enlaces de navegación */
 .custom-navbar .nav-link {
@@ -27,7 +24,7 @@ body {
 
 /* Estilo para la barra de navegación */
 .custom-navbar {
-    background-color: #2c3e50;
+    background-color: #000265;
     color: white;
 }
 
