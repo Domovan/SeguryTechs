@@ -1,4 +1,4 @@
-{% extends "layout.html" %}
+{% extends "layout2.html" %}
 
 {% block title %}Home{% endblock %}
 
@@ -35,22 +35,8 @@
             font-family: 'Arial', sans-serif;
         }
 
-        h1 {
-            text-align: center;
-            color: #2c3e50;
-            font-family: 'Arial', sans-serif;
-            margin-bottom: 20px;
-        }
 
-        /* Input de búsqueda */
-        #search_input {
-            width: 100%;
-            padding: 10px;
-            font-size: 18px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-        }
+
 
         /* Resultados de búsqueda */
         #search_results {
@@ -141,7 +127,11 @@
             <h1>Buscador de Colonias</h1>
             <button id="route_button">Calcular Ruta</button>
             <button id="show_risk_areas_button">Mostrar Zonas de Riesgo</button> <!-- Botón para mostrar áreas de riesgo -->
-            <input type="text" id="search_input" placeholder="Escribe el nombre de la colonia o código postal">
+            <BR>
+            <div class="search_bar">
+                <input type="text" id="search_input" placeholder="Escribe el nombre de la colonia o código postal">
+
+              </div>
             <div id="search_results"></div>
 
         </div>
@@ -151,5 +141,7 @@
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <script src="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.js"></script>
     <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+       <!-- JavaScript -->
+  
 </body>
 {% endblock %}

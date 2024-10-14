@@ -1,6 +1,7 @@
 from flask import Flask, render_template, send_from_directory
 from flask_socketio import SocketIO, emit
 import json
+import re
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'mysecret'
@@ -112,22 +113,36 @@ def handle_ruta_cambiada(data):
     waypoints = data.get('waypoints')
     calles = data.get('calles')  # Recibimos las calles
 
+    # Crear una cadena vacía para almacenar las calles
+    calles_str = "Calles por las que pasa la ruta:\n"
+
     print("Ruta recibida:")
     print(f"Distancia total: {distancia} metros")
     print(f"Duración total: {duracion} segundos")
     print("Waypoints (coordenadas):")
-    # for point in waypoints:
-    #     try:
-    #         lat = point['lat'] if isinstance(point, dict) else point[0]
-    #         lng = point['lng'] if isinstance(point, dict) else point[1]
-    #         print(f"Lat: {lat}, Lng: {lng}")
-    #     except (KeyError, IndexError) as e:
-    #         print(f"Error al acceder a las coordenadas: {e}")
-
-    print("Calles por las que pasa la ruta:")
+    # Para cada calle, añadirla al string
     for calle in calles:
-        print(calle)
-    print("\n" )
+        calles_str += calle + '\n'  # Añadir cada calle al string con salto de línea
+
+    # Imprimir el resultado (si es necesario para debug)
+    print(calles_str+ '\n')
+    print(separate_by_street(calles_str))
+    
+    
+
+# Función para separar las instrucciones de las calles/avenidas
+def separate_by_street(text):
+    lines = text.strip().split('\n')  # Dividir el texto por renglones
+    streets = []
+    
+    for line in lines:
+        # Encontrar las frases que empiezan con 'C' o 'A'
+        match = re.search(r'\b(C|A)\w+.*', line)
+        if match:
+            street = match.group(0)  # Extraer la calle o avenida
+            streets.append(street)
+    
+    return streets
     
     
 @socketio.on('waypoint_dragged')
