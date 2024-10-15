@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     document.getElementById('search_input').oninput = function () {
         var query = document.getElementById('search_input').value;
-        socket.emit('search', query);
+        socket.emit('search', query); // Envía la consulta al servidor
     };
 
     socket.on('search_results', function (results) {
@@ -53,17 +53,17 @@ document.addEventListener('DOMContentLoaded', function () {
             var ul = document.createElement('ul');
             results.forEach(function (colonia) {
                 var li = document.createElement('li');
-                li.textContent = colonia.nombre;
+                li.textContent = colonia.nombre_colonia; // Actualiza para acceder al nombre correcto
                 ul.appendChild(li);
 
                 li.addEventListener('click', function () {
-                    var lat = colonia.lat;
-                    var lng = colonia.lng;
+                    var lat = colonia.centro[1]; // Accede a la latitud
+                    var lng = colonia.centro[0]; // Accede a la longitud
 
                     clearMap();
 
                     currentMarker = L.marker([lat, lng]).addTo(map)
-                        .bindPopup(colonia.nombre + "<br>Riesgo: " + colonia.riesgo + "%")
+                        .bindPopup(colonia.nombre_colonia + "<br>Riesgo: " + colonia.riesgo + "%")
                         .openPopup();
 
                     map.setView([lat, lng], 16);
