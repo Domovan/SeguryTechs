@@ -1,32 +1,16 @@
-import re
+import json
+import random
 
-# Texto de ejemplo
-text = """
-Head northeast on Calle Doctor Alberto del Valle
-Turn right onto Avenida Fundición
-Make a U-turn and continue on Avenida Fundición
-Turn right onto Avenida Convención de 1914 Norte
-Turn left onto Calle General Ignacio Zaragoza
-You have arrived at your destination, on the right
-"""
+# Leer el archivo JSON original
+with open(r'C:\Users\hiram\OneDrive\Desktop\SeguryTechs\ubicaciones.json', 'r') as file:
+    data = json.load(file)
 
-# Función para separar las instrucciones de las calles/avenidas
-def separate_by_street(text):
-    lines = text.strip().split('\n')  # Dividir el texto por renglones
-    streets = []
-    
-    for line in lines:
-        # Encontrar las frases que empiezan con 'C' o 'A'
-        match = re.search(r'\b(C|A)\w+.*', line)
-        if match:
-            street = match.group(0)  # Extraer la calle o avenida
-            streets.append(street)
-    
-    return streets
+# Agregar un nuevo parámetro "riesgo" con un número aleatorio entre 0 y 100
+for colonia in data:
+    colonia['riesgo'] = random.randint(0, 100)
 
-# Separar las calles/avenidas
-streets = separate_by_street(text)
+# Guardar los datos modificados en un nuevo archivo
+with open('colonias_modificado.json', 'w') as file:
+    json.dump(data, file, indent=4)
 
-print("Calles/Avenidas detectadas:")
-for street in streets:
-    print(street)
+print("El archivo con las modificaciones ha sido guardado como 'colonias_modificado.json'.")

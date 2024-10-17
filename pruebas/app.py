@@ -10,8 +10,11 @@ socketio = SocketIO(app)
 
 
 # Función para cargar datos desde un archivo JSON
+# def cargar_puntos_zonas():
+#     with open(r'C:\Users\hiram\OneDrive\Desktop\SeguryTechs\ubicaciones.json', 'r') as archivo:
+#         return json.load(archivo)
 def cargar_puntos_zonas():
-    with open(r'C:\Users\hiram\OneDrive\Desktop\SeguryTechs\ubicaciones.json', 'r') as archivo:
+    with open(r'C:\Users\hiram\OneDrive\Desktop\SeguryTechs\colonias_modificado.json', 'r') as archivo:
         return json.load(archivo)
 
 # Carga de los puntos de zonas
@@ -63,7 +66,7 @@ def handle_mostrar_zonas_riesgo():
         nombre = colonia['nombre_colonia']
         lat = colonia['centro'][1]  # Latitud
         lng = colonia['centro'][0]  # Longitud
-        riesgo = datos_riesgo.get(nombre, 0)  # Asignar riesgo, 0 si no está en datos_riesgo
+        riesgo = colonia['riesgo']# Asignar riesgo, 0 si no está en datos_riesgo
         zonas_con_riesgo.append({'nombre': nombre, 'lat': lat, 'lng': lng, 'riesgo': riesgo})
     
     socketio.emit('zonas_riesgo', zonas_con_riesgo)
