@@ -1,14 +1,13 @@
 [
     {
-        "nombre_colonia": "Colonia Aguascalientes Centro",
+        "nombre_colonia": "Centro",
         "codigo_postal": 20000,
         "centro": [
-            -102.289434284171,
-            21.8905576098351
+            -102.293270,21.884759
         ]
     },
     {
-        "nombre_colonia": "Fraccionamiento San Cayetano",
+        "nombre_colonia": "San Cayetano Fracc.",
         "codigo_postal": 20010,
         "centro": [
             -102.325877544672,
@@ -16,7 +15,7 @@
         ]
     },
     {
-        "nombre_colonia": "Fraccionamiento Colinas del Rio",
+        "nombre_colonia": "Colinas del Río Fracc.",
         "codigo_postal": 20010,
         "centro": [
             -102.325877544672,
@@ -96,7 +95,7 @@
         ]
     },
     {
-        "nombre_colonia": "Fraccionamiento Circunvalaci�n Norte",
+        "nombre_colonia": "Circunvalación Norte Fracc.",
         "codigo_postal": 20020,
         "centro": [
             -102.296137314113,
@@ -104,7 +103,7 @@
         ]
     },
     {
-        "nombre_colonia": "Fraccionamiento Las Arboledas",
+        "nombre_colonia": "Arboledas Las Fracc.",
         "codigo_postal": 20020,
         "centro": [
             -102.296137314113,
@@ -136,7 +135,7 @@
         ]
     },
     {
-        "nombre_colonia": "Colonia Gremial",
+        "nombre_colonia": "Gremial Col.",
         "codigo_postal": 20030,
         "centro": [
             -102.292553709736,
@@ -144,7 +143,7 @@
         ]
     },
     {
-        "nombre_colonia": "Colonia Industrial",
+        "nombre_colonia": "Industrial Col.",
         "codigo_postal": 20030,
         "centro": [
             -102.292553709736,
@@ -296,7 +295,7 @@
         ]
     },
     {
-        "nombre_colonia": "Unidad habitacional Guadalupe Posada",
+        "nombre_colonia": "Guadalupe de Barrio",
         "codigo_postal": 20070,
         "centro": [
             -102.301241366003,
@@ -304,7 +303,7 @@
         ]
     },
     {
-        "nombre_colonia": "Colonia San Marcos",
+        "nombre_colonia": "San Marcos Col.",
         "codigo_postal": 20070,
         "centro": [
             -102.301241366003,
@@ -312,11 +311,12 @@
         ]
     },
     {
-        "nombre_colonia": "Barrio San Marcos",
+        "nombre_colonia": "San Marcos Barrio",
         "codigo_postal": 20070,
         "centro": [
-            -102.301241366003,
-            21.8771261380679
+            -102.305060,21.879519
+
+
         ]
     },
     {
@@ -840,11 +840,12 @@
         ]
     },
     {
-        "nombre_colonia": "Fraccionamiento Villa de Nuestra Se�ora de La Asunci�n Sector Guadalupe",
+        "nombre_colonia": "Villas de Ntra. Sra. de la Asunción Sec Guadalupe",
         "codigo_postal": 20126,
         "centro": [
-            -102.261415597313,
-            21.9226698363184
+             -102.256165,21.930733
+
+
         ]
     },
     {
@@ -880,19 +881,18 @@
         ]
     },
     {
-        "nombre_colonia": "Fraccionamiento Villa de Nuestra Se�ora de La Asunci�n Sector Encino",
+        "nombre_colonia": "Villas de Ntra. Sra. de la Asunción Sec Estacion Fracc.",
         "codigo_postal": 20126,
         "centro": [
-            -102.261415597313,
-            21.9226698363184
+        -102.259371,21.937540
+
         ]
     },
     {
-        "nombre_colonia": "Fraccionamiento Villa de Nuestra Se�ora de La Asunci�n Sector Alameda",
+        "nombre_colonia": "Villas de Ntra. Sra. de la Asunción Sec Alameda Fracc.",
         "codigo_postal": 20126,
         "centro": [
-            -102.261415597313,
-            21.9226698363184
+            -102.264081,21.932972
         ]
     },
     {
@@ -904,19 +904,19 @@
         ]
     },
     {
-        "nombre_colonia": "Fraccionamiento Villa de Nuestra Se�ora de La Asunci�n Sector San Marcos",
+        "nombre_colonia": "Villas de Ntra. Sra. de la Asunción Sec San Marcos Fracc.",
         "codigo_postal": 20126,
         "centro": [
-            -102.261415597313,
-            21.9226698363184
+            -102.264861, 21.928556
         ]
     },
     {
-        "nombre_colonia": "Fraccionamiento Villa de Nuestra Se�ora de La Asunci�n Sector Estaci�n",
+        "nombre_colonia": "Villas de Ntra. Sra. de la Asunción Sec Estacion Fracc.",
         "codigo_postal": 20126,
         "centro": [
-            -102.261415597313,
-            21.9226698363184
+            -102.256625,21.938874
+
+
         ]
     },
     {
@@ -1040,7 +1040,7 @@
         ]
     },
     {
-        "nombre_colonia": "Fraccionamiento Bosques del Prado Sur",
+        "nombre_colonia": "Bosques del Prado Sur Fracc.",
         "codigo_postal": 20130,
         "centro": [
             -102.316358779205,
@@ -1392,7 +1392,7 @@
         ]
     },
     {
-        "nombre_colonia": "Fraccionamiento Santa Anita",
+        "nombre_colonia": "Santa Anita 1era Secc. Fracc.",
         "codigo_postal": 20169,
         "centro": [
             -102.275607721086,
@@ -1440,7 +1440,7 @@
         ]
     },
     {
-        "nombre_colonia": "Fraccionamiento Rodolfo Landeros Gallegos",
+        "nombre_colonia": "Rodolfo Landeros Fracc.",
         "codigo_postal": 20170,
         "centro": [
             -102.257660572882,
@@ -1728,7 +1728,7 @@
         ]
     },
     {
-        "nombre_colonia": "Colonia Del Trabajo",
+        "nombre_colonia": "Trabajo del Col.",
         "codigo_postal": 20180,
         "centro": [
             -102.265884065302,
@@ -1880,7 +1880,7 @@
         ]
     },
     {
-        "nombre_colonia": "Fraccionamiento Jos� Guadalupe Peralta G�mez",
+        "nombre_colonia": "José Guadalupe Peralta Fracc.",
         "codigo_postal": 20196,
         "centro": [
             -102.220805349936,
@@ -1888,7 +1888,7 @@
         ]
     },
     {
-        "nombre_colonia": "Fraccionamiento Haciendas de Aguascalientes",
+        "nombre_colonia": "Haciendas de Aguascalientes Fracc.",
         "codigo_postal": 20196,
         "centro": [
             -102.220805349936,
@@ -2040,7 +2040,7 @@
         ]
     },
     {
-        "nombre_colonia": "Fraccionamiento Municipio Libre",
+        "nombre_colonia": "Municipio Libre Fracc.",
         "codigo_postal": 20199,
         "centro": [
             -102.271025196267,
@@ -2256,7 +2256,7 @@
         ]
     },
     {
-        "nombre_colonia": "Fraccionamiento Espa�a",
+        "nombre_colonia": "España Fracc.",
         "codigo_postal": 20210,
         "centro": [
             -102.320233111165,
@@ -2384,7 +2384,7 @@
         ]
     },
     {
-        "nombre_colonia": "Colonia Las Flores",
+        "nombre_colonia": "Flores Las Col.",
         "codigo_postal": 20220,
         "centro": [
             -102.300625155865,
@@ -2408,7 +2408,7 @@
         ]
     },
     {
-        "nombre_colonia": "Fraccionamiento Las Am�ricas",
+        "nombre_colonia": "Américas Las Fracc.",
         "codigo_postal": 20230,
         "centro": [
             -102.295071000623,
@@ -2416,7 +2416,7 @@
         ]
     },
     {
-        "nombre_colonia": "Colonia Obraje",
+        "nombre_colonia": "Obraje Col.",
         "codigo_postal": 20230,
         "centro": [
             -102.295071000623,
@@ -2448,7 +2448,7 @@
         ]
     },
     {
-        "nombre_colonia": "Fraccionamiento El Dorado 1a Secci�n",
+        "nombre_colonia": "Dorado El 1era Secc. Fracc.",
         "codigo_postal": 20235,
         "centro": [
             -102.300636216924,
@@ -2688,7 +2688,7 @@
         ]
     },
     {
-        "nombre_colonia": "Unidad habitacional FOVISSSTE Ojocaliente I",
+        "nombre_colonia": "Ojocaliente I Fracc.",
         "codigo_postal": 20256,
         "centro": [
             -102.258739012162,
@@ -2696,7 +2696,7 @@
         ]
     },
     {
-        "nombre_colonia": "Condominio Ojocaliente FOVISSSTE II",
+        "nombre_colonia": "Ojocaliente III Fracc.",
         "codigo_postal": 20256,
         "centro": [
             -102.258739012162,
@@ -2752,7 +2752,7 @@
         ]
     },
     {
-        "nombre_colonia": "Barrio La Pur�sima",
+        "nombre_colonia": "Purísima La Barrio",
         "codigo_postal": 20259,
         "centro": [
             -102.279090540397,
@@ -2968,7 +2968,7 @@
         ]
     },
     {
-        "nombre_colonia": "Unidad habitacional Morelos INFONAVIT",
+        "nombre_colonia": "Morelos Infonavit",
         "codigo_postal": 20264,
         "centro": [
             -102.265900835048,
@@ -3480,7 +3480,7 @@
         ]
     },
     {
-        "nombre_colonia": "Fraccionamiento Insurgentes",
+        "nombre_colonia": "Insurgentes Col. (Las Huertas)",
         "codigo_postal": 20287,
         "centro": [
             -102.31920591599,
@@ -3504,7 +3504,7 @@
         ]
     },
     {
-        "nombre_colonia": "Unidad habitacional Pilar Blanco INFONAVIT",
+        "nombre_colonia": "Pilar Blanco Infonavit",
         "codigo_postal": 20289,
         "centro": [
             -102.297216702046,
@@ -3616,7 +3616,7 @@
         ]
     },
     {
-        "nombre_colonia": "Fraccionamiento Morelos I",
+        "nombre_colonia": "Morelos I Fracc.",
         "codigo_postal": 20298,
         "centro": [
             -102.251933058408,

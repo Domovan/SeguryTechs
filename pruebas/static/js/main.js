@@ -61,9 +61,10 @@ document.addEventListener('DOMContentLoaded', function () {
                     var lng = colonia.centro[0]; // Accede a la longitud
 
                     clearMap();
-
+                    let randomNumber = Math.floor(Math.random() * 101);
                     currentMarker = L.marker([lat, lng]).addTo(map)
-                        .bindPopup(colonia.nombre_colonia + "<br>Riesgo: " + colonia.riesgo + "%")
+                    
+                        .bindPopup(colonia.nombre_colonia + "<br>Riesgo: " + randomNumber + "%")
                         .openPopup();
 
                     map.setView([lat, lng], 16);
@@ -144,9 +145,13 @@ document.addEventListener('DOMContentLoaded', function () {
     socket.on('zonas_riesgo', function (zonas) {
         clearMap();
         zonas.forEach(function (zona) {
+            
+            let randomNumber = Math.floor(Math.random() * 101);//generar un numero aleatorio
             const { nombre, lat, lng, riesgo } = zona;
-            const color = obtenerColorRiesgo(riesgo);
-
+            const color = obtenerColorRiesgo(randomNumber);
+        
+            
+            
             var circle = L.circle([lat, lng], {
                 color: color,
                 radius: 500,
@@ -155,7 +160,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }).addTo(map);
 
             var marker = L.marker([lat, lng]).addTo(map)
-                .bindPopup(`<b>${nombre}</b><br>Riesgo: ${riesgo}%`).openPopup();
+                .bindPopup(`<b>${nombre}</b><br>Riesgo: ${randomNumber}%`).openPopup();
 
             allCircles.push(circle);
             allMarkers.push(marker);
