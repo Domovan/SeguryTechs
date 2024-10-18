@@ -121,21 +121,47 @@
     <div class="container">
         <!-- Mapa a la izquierda -->
         <div id="map"></div>
-
         <!-- Sección de búsqueda a la derecha -->
         <div class="search-section">
             <h1>Buscador de Colonias</h1>
             <button id="route_button">Calcular Ruta</button>
             <button id="show_risk_areas_button">Mostrar Zonas de Riesgo</button> <!-- Botón para mostrar áreas de riesgo -->
             <BR>
-            <div class="search_bar">
-                <input type="text" id="search_input" placeholder="Escribe el nombre de la colonia o código postal">
-
-              </div>
-            <div id="search_results"></div>
-
+                <div class="search_bar">
+                    <input type="text" id="search_input" placeholder="Escribe el nombre de la colonia o código postal">
+                    
+                </div>
+                <div id="search_results"></div>
+                
+            </div>
         </div>
-    </div>
+
+        
+        <table id="mapTable" class="maping">
+            <tr>
+                <td id="mapCell1">
+                    <div class='minimap'id="map1" style="width: 100%; height: 200px;"></div>
+                    <div id="directions1" class="directions"></div>
+                </td>
+                <td id="mapCell2">
+                    <div class='minimap' id="map2" style="width: 100%; height: 200px;"></div>
+                    <div id="directions2" class="directions"></div>
+                </td>
+            </tr>
+            <tr>
+                <td id="mapCell3">
+                    <div class='minimap' id="map3" style="width: 100%; height: 200px;"></div>
+                    <div id="directions3" class="directions"></div>
+                </td>
+                <td id="mapCell4">
+                    <div class='minimap' id="map4" style="width: 100%; height: 200px;"></div>
+                    <div id="directions4" class="directions"></div>
+                </td>
+            </tr>
+        </table>
+        
+        
+        
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.0/socket.io.js"></script>
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>

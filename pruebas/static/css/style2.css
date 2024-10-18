@@ -291,4 +291,50 @@ h1 {
     color: #c3c3c3;
 }
 
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #f44336;
+  color: white;
+}
+
+.degradado-tabla tbody {
+  background: linear-gradient(to bottom, #f44336, #ffeb3b, #4caf50);
+}
+
+.degradado-tabla tbody tr {
+  color: white;
+}
+
+.degradado-tabla tbody tr:nth-child(even) {
+  background: rgba(255, 255, 255, 0.1); /* Da un efecto suave de filas alternas */
+}
+
+tr:hover {
+  background-color: rgba(255, 255, 255, 0.2); /* Efecto hover */
+}
+
+th, td {
+  border: 1px solid #ddd;
+}
+
+.directions {
+  margin-top: 10px;
+  font-size: 12px;
+  line-height: 1.5;
+  overflow-y: auto;
+  max-height: 100px; /* Ajusta este valor según el tamaño que quieras */
+}
+
   

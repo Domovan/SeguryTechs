@@ -1,4 +1,4 @@
-{% extends "layout.html" %}
+{% extends "layout2.html" %}
 
 {% block title %}Statistics Gallery{% endblock %}
 
@@ -10,26 +10,28 @@
     <!-- Galería de imágenes de estadísticas -->
     <div class="row">
         <div class="col-md-4">
-            <img src="{{ url_for('static', filename='images/stat1.jpg') }}" class="img-fluid mb-4" alt="Stat 1">
+            <img src="data:image/png;base64,{{ img }}" class="img-fluid mb-4" alt="Stat 1">
         </div>
-        <div class="col-md-4">
-            <img src="{{ url_for('static', filename='images/stat2.jpg') }}" class="img-fluid mb-4" alt="Stat 2">
-        </div>
-        <div class="col-md-4">
-            <img src="{{ url_for('static', filename='images/stat3.jpg') }}" class="img-fluid mb-4" alt="Stat 3">
-        </div>
+        
     </div>
 
     <div class="row">
-        <div class="col-md-4">
-            <img src="{{ url_for('static', filename='images/stat4.jpg') }}" class="img-fluid mb-4" alt="Stat 4">
-        </div>
-        <div class="col-md-4">
-            <img src="{{ url_for('static', filename='images/stat5.jpg') }}" class="img-fluid mb-4" alt="Stat 5">
-        </div>
-        <div class="col-md-4">
-            <img src="{{ url_for('static', filename='images/stat6.jpg') }}" class="img-fluid mb-4" alt="Stat 6">
-        </div>
-    </div>
+        <table>
+            <thead>
+              <tr>
+                <th>Nombre</th>
+                <th>Riesgo</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for nombre, riesgo in combinados %}
+              <tr>
+                <td>{{ nombre }}</td>
+                <td>{{ riesgo }}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+          
 </div>
 {% endblock %}

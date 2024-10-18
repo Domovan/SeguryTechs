@@ -2,6 +2,7 @@ from flask import Flask, render_template, send_from_directory
 from flask_socketio import SocketIO, emit
 import json
 import re
+from IA_simpd import graficar_datos,obtener_conexion
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'mysecret'
@@ -119,9 +120,26 @@ def handle_waypoint_dragged(data):
     print("Puntos de control actualizados:", waypoints)
 
 # Ruta principal para servir la página
-@app.route('/estadisticas')
-def estadisticas():
-    return render_template('estadisticas.html')
+@app.route('/estadisticas/<int:opcion>')
+def estadisticas(opcion):
+    try:
+        #Conectar a la base de datos y obtener zonas
+        conexion = obtener_conexion()
+        cursor = conexion.cursor()
+        cursor.execute("SELECT nombre, riesgo FROM zonas order by riesgo desc;")
+        BD = cursor.fetchall()
+        cursor.close()
+        conexion.close()
+    except:
+        print("a la mierda todo")
+    
+    nombres1 = [c[0] for c in BD]
+    riesgos1 = [c[1] for c in BD]
+    combinados = list(zip(nombres1, riesgos1))
+    img1=graficar_datos(opcion)
+        
+        
+    return render_template('estadisticas.html',img=img1,combinados=combinados)
 
 if __name__ == '__main__':
     socketio.run(app, debug=True, allow_unsafe_werkzeug=True)
